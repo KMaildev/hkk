@@ -21,6 +21,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
+<style>
+    .nav-menu {
+        color: black !important;
+        /* text-shadow: 5px 5px 5px #242623; */
+        font-weight: bold;
+    }
+</style>
 
 <body>

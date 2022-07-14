@@ -3,34 +3,37 @@
     <div class="top-bar">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-xs-12">
-                    <div class="roof-social float-left">
-
-                        <a href="tel:+9595002998">
+                <div class="col-lg-8 col-md-8">
+                    <ul class="list-inline">
+                        <li>
                             <i class="lni-phone"></i>
-                            +959 500 2998,
-                        </a>
-                        <a href="tel:+959775002998">
-                            +959 775 002 998
-                        </a>
+                            <span>
+                                +959 500 2998,
+                            </span>
+                            <span>
+                                +959 775 002 998
+                            </span>
+                        </li>
 
-                        <a href="mailto:captainukt@gmail.com">
+                        <li>
                             <i class="lni-envelope"></i>
-                            captainukt@gmail.com
-                        </a>
-                    </div>
+                            <span>
+                                captainukt@gmail.com,
+                            </span>
+                            <span>
+                                info@hkkservices.com
+                            </span>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="col-lg-4 col-md-4 col-xs-12">
+                <div class="col-lg-4 col-md-4">
                     <div class="roof-social float-right">
                         <a class="facebook" href="#">
                             <i class="lni-facebook-filled"></i>
                         </a>
                         <a class="twitter" href="#">
                             <i class="lni-twitter-filled"></i>
-                        </a>
-                        <a class="instagram" href="#">
-                            <i class="lni-instagram-filled"></i>
                         </a>
                         <a class="linkedin" href="#">
                             <i class="lni-linkedin-fill"></i>
@@ -45,6 +48,8 @@
     </div>
 
 
+
+
     <nav class="navbar navbar-expand-lg bg-white fixed-top scrolling-navbar">
         <div class="container">
 
@@ -57,41 +62,126 @@
                     <span class="lni-menu"></span>
                 </button>
                 <a href="{{ route('home') }}" class="navbar-brand">
-                    <img src="https://preview.uideck.com/items/nexusplus/assets/img/logo.png" alt="">
+                    <img src="{{ asset('data/logo.jpg') }}" alt="" style="width: 50px;">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto w-100 justify-content-center">
 
                     <li class="nav-item {{ Request::routeIs('home') ? 'active' : '' }}">
-                        <a href="{{ route('home') }}" class="nav-link">
+                        <a href="{{ route('home') }}" class="nav-link nav-menu">
                             Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adlistinggrid.html">
+                                Our Company Profile
+                            </a>
+                            <a class="dropdown-item" href="{{ route('statement.index') }}">
+                                Our Vision and Mission
+                            </a>
+                            <a class="dropdown-item" href="adlistinggrid.html">
+                                Our Strengths & Presence
+                            </a>
+                            <a class="dropdown-item" href="{{ route('organization.index') }}">
+                                Corporate Structure/Organization Chart
+                            </a>
+                            <a class="dropdown-item" href="adlistinglist.html">
+                                Management Team
+                            </a>
+                            <a class="dropdown-item" href="adlistinglist.html">
+                                e-Brochure
+                            </a>
+                            <a class="dropdown-item" href="{{ route('partners.index') }}">
+                                Our Value Partners
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('jobs.index') }}">
+                                Jobs Available In Japan
+                            </a>
+                            <a class="dropdown-item" href="{{ route('recruitment.index') }}">
+                                Our Recruitment Process
+                            </a>
+                            <a class="dropdown-item" href="{{ route('training.index') }}">
+                                Recruiter Training Program
+                            </a>
+                            <a class="dropdown-item" href="{{ route('milestones.index') }}">
+                                Milestones
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Candidates Zone
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('cv.index') }}">
+                                Submit CV
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-menu" href="{{ route('employer.index') }}">
+                            Employer Zone
                         </a>
                     </li>
 
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Listings
+                        <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Resources
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="adlistinggrid.html">Ad Grid</a>
-                            <a class="dropdown-item" href="adlistinglist.html">Ad Listing</a>
-                            <a class="dropdown-item" href="ads-details.html">Listing Detail</a>
+                            <a href="{{ route('gallery.index') }}" class="dropdown-item">
+                                Activities
+                            </a>
+
+                            <a href="{{ route('blog.index') }}" class="dropdown-item">
+                                Blog
+                            </a>
+
+                            <a href="{{ route('faq.index') }}" class="dropdown-item">
+                                Employer FAQ's
+                            </a>
                         </div>
                     </li>
 
                     <li class="nav-item {{ Request::routeIs('contact.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('contact.index') }}">
+                        <a class="nav-link nav-menu" href="{{ route('contact.index') }}">
                             Contact
                         </a>
                     </li>
                 </ul>
+
                 <div class="post-btn">
                     <a class="btn btn-common" href="post-ads.html">
                         <i class="lni-pencil-alt"></i>
-                        Post an Ad
+                        FMCJ
+                    </a>
+                </div>
+
+                <div class="post-btn" style="margin-left: 5px;">
+                    <a class="btn btn-common" href="post-ads.html">
+                        <i class="lni-pencil-alt"></i>
+                        JOBGTOP
                     </a>
                 </div>
             </div>

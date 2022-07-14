@@ -26,11 +26,12 @@
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-xs-12">
                     <form class="contact-form" data-toggle="validator" action="{{ route('contact.store') }}"
-                        method="POST">
+                        method="POST" id="create-form">
                         @csrf
-                        <h2 class="contact-title">
+                        <h1 class="contact-title"
+                            style="color: #E93F33; text-shadow: 5px 5px 5px gray; font-weight: bold; font-size: 20px;">
                             Send Message Us
-                        </h2>
+                        </h1>
                         <p>
                             Please fill in the following form with a short description about yourself and your needs, and we
                             will contact you shortly.
@@ -44,7 +45,7 @@
                                         class="form-control @error('name') is-invalid @enderror"
                                         value="{{ old('name') }}">
                                     @error('name')
-                                        <div class="help-block with-errors text-danger">
+                                        <div class="help-block with-danger text-danger">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -111,7 +112,9 @@
 
                 <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="information">
-                        <h3>Contact Info</h3>
+                        <h3 style="background-color: #F7BC33; color: white;">
+                            Contact Info
+                        </h3>
                         <div class="contact-datails">
                             <p style="text-align: justify; font-weight: bold;">
                                 If you have any queries about recruitments, vacancies, or anything else, our team is ready
@@ -171,18 +174,12 @@
                                     </p>
                                 </li>
                             </ul>
+                            <br><br><br><br>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-
-    <section id="google-map-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
+                <div class="col-md-12 col-sm-12 col-lg-12 py-5">
                     <object style="border:0; height: 450px; width: 100%;"
                         data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584"></object>
                 </div>
@@ -192,4 +189,5 @@
 @endsection
 
 @section('script')
+    {!! JsValidator::formRequest('App\Http\Requests\StoreContacts', '#create-form') !!}
 @endsection
