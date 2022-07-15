@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 14, 2022 at 08:48 PM
+-- Generation Time: Jul 15, 2022 at 05:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.29
 
@@ -245,7 +245,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2022_07_14_153945_create_jobs_table', 7),
 (10, '2022_07_14_155218_create_milestones_table', 8),
 (11, '2022_07_14_175141_create_training_photos_table', 9),
-(12, '2022_07_14_183815_create_partners_table', 10);
+(12, '2022_07_14_183815_create_partners_table', 10),
+(13, '2022_07_15_015010_create_teams_table', 11);
 
 -- --------------------------------------------------------
 
@@ -296,6 +297,29 @@ INSERT INTO `partners` (`id`, `company_name`, `city`, `created_at`, `updated_at`
 (4, 'DAIMEI OKAYAMA CO.,LTD ', 'Okayama Prefecture', NULL, NULL),
 (5, 'DAISAN CONSTRUCTION CO.,LTD ', 'Nagoya,Aichi Prefecture', NULL, NULL),
 (6, 'HARUNO CORPORATION CO.,LTD ', 'Shizuoka Prefecture', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `name`, `position`, `photo`, `created_at`, `updated_at`) VALUES
+(1, 'U Mg Mg', 'Managing Director', 'https://www.w3schools.com/howto/img_avatar.png', NULL, NULL),
+(2, 'U Aung Aung', 'Manager', 'https://www.w3schools.com/howto/img_avatar.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -406,6 +430,12 @@ ALTER TABLE `partners`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `training_photos`
 --
 ALTER TABLE `training_photos`
@@ -474,7 +504,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `milestones`
@@ -487,6 +517,12 @@ ALTER TABLE `milestones`
 --
 ALTER TABLE `partners`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `training_photos`

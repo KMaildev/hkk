@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
-use App\Jobs;
-use App\Models\Gallery;
-use App\Models\Partner;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $jobs = Jobs::all();
-        $partners = Partner::all();
-        $activities = Gallery::orderBy('id', 'desc')->limit(3)->get();
-        $blogs = Blog::orderBy('id', 'desc')->limit(3)->get();
-        return view('welcome', compact('jobs', 'partners', 'activities', 'blogs'));
+        return view('about.index');
     }
 
     /**
@@ -88,11 +80,5 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function admin()
-    {
-        // return redirect()->away('https://recruitmentmyanmarsak.com/admin/');
-        return redirect('https://recruitmentmyanmarsak.com/admin/');
     }
 }

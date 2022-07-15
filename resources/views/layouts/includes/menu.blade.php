@@ -3,7 +3,7 @@
     <div class="top-bar">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-8">
+                <div class="col-lg-6 col-md-6">
                     <ul class="list-inline">
                         <li>
                             <i class="lni-phone"></i>
@@ -14,45 +14,46 @@
                                 +959 775 002 998
                             </span>
                         </li>
-
-                        <li>
-                            <i class="lni-envelope"></i>
-                            <span>
-                                captainukt@gmail.com,
-                            </span>
-                            <span>
-                                info@hkkservices.com
-                            </span>
-                        </li>
                     </ul>
                 </div>
 
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-6 col-md-6">
                     <div class="roof-social float-right">
-                        <a class="facebook" href="#">
-                            <i class="lni-facebook-filled"></i>
+                        <a class="facebook" href="https://www.facebook.com/profile.php?id=100054346908467"
+                            target="_blank">
+                            <i class="lni-facebook-filled">
+                                Company Page
+                            </i>
                         </a>
-                        <a class="twitter" href="#">
-                            <i class="lni-twitter-filled"></i>
+
+                        <a class="facebook"
+                            href="https://www.facebook.com/Nozomi-Japanese-Language-School-427030791157796/"
+                            target="_blank">
+                            <i class="lni-facebook-filled">
+                                Language School Page
+                                &nbsp;&nbsp;
+                            </i>
                         </a>
-                        <a class="linkedin" href="#">
-                            <i class="lni-linkedin-fill"></i>
+
+                        <a href="{{ route('language.index') }}">
+                            <img src="{{ asset('data/us.gif') }}" alt=""
+                                style="width: 43px; height: auto; padding: 2px;">
                         </a>
-                        <a class="google" href="#">
-                            <i class="lni-google-plus"></i>
+
+                        <a href="{{ route('set_jp') }}">
+                            <img src="{{ asset('data/jp.jpeg') }}" alt=""
+                                style="width: 43px; height: auto; padding: 2px;">
                         </a>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
 
 
-
-
     <nav class="navbar navbar-expand-lg bg-white fixed-top scrolling-navbar">
         <div class="container">
-
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
                     aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,44 +63,80 @@
                     <span class="lni-menu"></span>
                 </button>
                 <a href="{{ route('home') }}" class="navbar-brand">
-                    <img src="{{ asset('data/logo.jpg') }}" alt="" style="width: 50px;">
+                    <img src="https://www.om-tdcompany.com/public/data/weblogo.png" alt=""
+                        style="width: 180px;">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="main-navbar">
                 <ul class="navbar-nav mr-auto w-100 justify-content-center">
 
-                    <li class="nav-item {{ Request::routeIs('home') ? 'active' : '' }}">
+                    <li class="nav-item">
                         <a href="{{ route('home') }}" class="nav-link nav-menu">
-                            Home
+                            @if (session()->get('lang') == 'jp')
+                                家
+                            @elseif (session()->get('lang') == 'mm')
+                                ပင်မစာမျက်နှာ
+                            @else
+                                Home
+                            @endif
                         </a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            About Us
+                            @if (session()->get('lang') == 'jp')
+                                約
+                            @elseif (session()->get('lang') == 'mm')
+                                ကုမ္ပဏီ
+                            @else
+                                About Us
+                            @endif
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="adlistinggrid.html">
-                                Our Company Profile
+                            <a class="dropdown-item" href="{{ route('about.index') }}">
+                                @if (session()->get('lang') == 'jp')
+                                    当社概要
+                                @elseif (session()->get('lang') == 'mm')
+                                    ကုမ္ပဏီအကြောင်း
+                                @else
+                                    Our Company Profile
+                                @endif
                             </a>
                             <a class="dropdown-item" href="{{ route('statement.index') }}">
-                                Our Vision and Mission
-                            </a>
-                            <a class="dropdown-item" href="adlistinggrid.html">
-                                Our Strengths & Presence
+                                @if (session()->get('lang') == 'jp')
+                                    私たちのビジョンと使命
+                                @else
+                                    Our Vision and Mission
+                                @endif
                             </a>
                             <a class="dropdown-item" href="{{ route('organization.index') }}">
-                                Corporate Structure/Organization Chart
+                                @if (session()->get('lang') == 'jp')
+                                    企業構造/組織図
+                                @else
+                                    Corporate Structure/Organization Chart
+                                @endif
                             </a>
-                            <a class="dropdown-item" href="adlistinglist.html">
-                                Management Team
+                            <a class="dropdown-item" href="{{ route('management_team.index') }}">
+                                @if (session()->get('lang') == 'jp')
+                                    経営陣
+                                @else
+                                    Management Team
+                                @endif
                             </a>
-                            <a class="dropdown-item" href="adlistinglist.html">
-                                e-Brochure
+                            <a class="dropdown-item" href="{{ asset('data/hkk.pdf') }}">
+                                @if (session()->get('lang') == 'jp')
+                                    e-パンフレット
+                                @else
+                                    e-Brochure
+                                @endif
                             </a>
                             <a class="dropdown-item" href="{{ route('partners.index') }}">
-                                Our Value Partners
+                                @if (session()->get('lang') == 'jp')
+                                    私たちのバリューパートナー
+                                @else
+                                    Our Value Partners
+                                @endif
                             </a>
                         </div>
                     </li>
@@ -107,20 +144,40 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            Services
+                            @if (session()->get('lang') == 'jp')
+                                サービス
+                            @else
+                                Services
+                            @endif
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('jobs.index') }}">
-                                Jobs Available In Japan
+                                @if (session()->get('lang') == 'jp')
+                                    日本で利用できる仕事
+                                @else
+                                    Jobs Available In Japan
+                                @endif
                             </a>
                             <a class="dropdown-item" href="{{ route('recruitment.index') }}">
-                                Our Recruitment Process
+                                @if (session()->get('lang') == 'jp')
+                                    私たちの採用プロセス
+                                @else
+                                    Our Recruitment Process
+                                @endif
                             </a>
                             <a class="dropdown-item" href="{{ route('training.index') }}">
-                                Recruiter Training Program
+                                @if (session()->get('lang') == 'jp')
+                                    リクルータートレーニングプログラム
+                                @else
+                                    Recruiter Training Program
+                                @endif
                             </a>
                             <a class="dropdown-item" href="{{ route('milestones.index') }}">
-                                Milestones
+                                @if (session()->get('lang') == 'jp')
+                                    マイルストーン
+                                @else
+                                    Milestones
+                                @endif
                             </a>
                         </div>
                     </li>
@@ -128,18 +185,30 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            Candidates Zone
+                            @if (session()->get('lang') == 'jp')
+                                候補ゾーン
+                            @else
+                                Candidates Zone
+                            @endif
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('cv.index') }}">
-                                Submit CV
+                                @if (session()->get('lang') == 'jp')
+                                    履歴書を提出する
+                                @else
+                                    Submit CV
+                                @endif
                             </a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-menu" href="{{ route('employer.index') }}">
-                            Employer Zone
+                            @if (session()->get('lang') == 'jp')
+                                雇用者ゾーン
+                            @else
+                                Employer Zone
+                            @endif
                         </a>
                     </li>
 
@@ -147,93 +216,334 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            Resources
+                            @if (session()->get('lang') == 'jp')
+                                資力
+                            @else
+                                Resources
+                            @endif
                         </a>
                         <div class="dropdown-menu">
                             <a href="{{ route('gallery.index') }}" class="dropdown-item">
-                                Activities
+                                @if (session()->get('lang') == 'jp')
+                                    活動
+                                @else
+                                    Activities
+                                @endif
                             </a>
 
                             <a href="{{ route('blog.index') }}" class="dropdown-item">
-                                Blog
+                                @if (session()->get('lang') == 'jp')
+                                    ブログ
+                                @else
+                                    Blog
+                                @endif
                             </a>
 
                             <a href="{{ route('faq.index') }}" class="dropdown-item">
-                                Employer FAQ's
+                                @if (session()->get('lang') == 'jp')
+                                    雇用主に関するFAQ
+                                @else
+                                    Employer FAQ's
+                                @endif
                             </a>
                         </div>
                     </li>
 
-                    <li class="nav-item {{ Request::routeIs('contact.index') ? 'active' : '' }}">
+                    <li class="nav-item">
                         <a class="nav-link nav-menu" href="{{ route('contact.index') }}">
-                            Contact
+                            @if (session()->get('lang') == 'jp')
+                                コンタクト
+                            @else
+                                Contact
+                            @endif
                         </a>
                     </li>
+
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-globe"></i>
+                            Link
+                        </a>
+                        <div class="dropdown-menu">
+
+                            <a class="dropdown-item" href="https://fmcj.jp/" target="_blank">
+                                <i class="fa fa-globe"></i>
+                                FMCJ
+                            </a>
+
+                            <a class="dropdown-item" href="https://jobgtop.com/" target="_blank">
+                                <i class="fa fa-globe"></i>
+                                JOBGTOP
+                            </a>
+                        </div>
+                    </li>
                 </ul>
-
-                <div class="post-btn">
-                    <a class="btn btn-common" href="post-ads.html">
-                        <i class="lni-pencil-alt"></i>
-                        FMCJ
-                    </a>
-                </div>
-
-                <div class="post-btn" style="margin-left: 5px;">
-                    <a class="btn btn-common" href="post-ads.html">
-                        <i class="lni-pencil-alt"></i>
-                        JOBGTOP
-                    </a>
-                </div>
             </div>
         </div>
 
         <ul class="mobile-menu">
+
+
+            <li class="nav-item">
+                <a href="{{ route('home') }}" class="nav-link nav-menu">
+                    @if (session()->get('lang') == 'jp')
+                        家
+                    @elseif (session()->get('lang') == 'mm')
+                        ပင်မစာမျက်နှာ
+                    @else
+                        Home
+                    @endif
+                </a>
+            </li>
+
             <li>
-                <a class="active" href="#">
-                    Home
+                <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    @if (session()->get('lang') == 'jp')
+                        約
+                    @elseif (session()->get('lang') == 'mm')
+                        ကုမ္ပဏီ
+                    @else
+                        About Us
+                    @endif
                 </a>
                 <ul class="dropdown">
-                    <li><a class="active" href="index.html">Home 1</a></li>
-                    <li><a href="index-2.html">Home 2</a></li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('about.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                当社概要
+                            @elseif (session()->get('lang') == 'mm')
+                                ကုမ္ပဏီအကြောင်း
+                            @else
+                                Our Company Profile
+                            @endif
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="{{ route('statement.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                私たちのビジョンと使命
+                            @else
+                                Our Vision and Mission
+                            @endif
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="{{ route('organization.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                企業構造/組織図
+                            @else
+                                Corporate Structure/Organization Chart
+                            @endif
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="{{ route('management_team.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                経営陣
+                            @else
+                                Management Team
+                            @endif
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="{{ asset('data/hkk.pdf') }}">
+                            @if (session()->get('lang') == 'jp')
+                                e-パンフレット
+                            @else
+                                e-Brochure
+                            @endif
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="{{ route('partners.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                私たちのバリューパートナー
+                            @else
+                                Our Value Partners
+                            @endif
+                        </a>
+                    </li>
                 </ul>
             </li>
+
             <li>
-                <a href="category.html">Categories</a>
+                <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    @if (session()->get('lang') == 'jp')
+                        サービス
+                    @else
+                        Services
+                    @endif
+                </a>
+                <ul>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('jobs.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                日本で利用できる仕事
+                            @else
+                                Jobs Available In Japan
+                            @endif
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('recruitment.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                私たちの採用プロセス
+                            @else
+                                Our Recruitment Process
+                            @endif
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('training.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                リクルータートレーニングプログラム
+                            @else
+                                Recruiter Training Program
+                            @endif
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{{ route('milestones.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                マイルストーン
+                            @else
+                                Milestones
+                            @endif
+                        </a>
+                    </li>
+                </ul>
             </li>
+
             <li>
-                <a href="#">
-                    Listings
+                <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    @if (session()->get('lang') == 'jp')
+                        候補ゾーン
+                    @else
+                        Candidates Zone
+                    @endif
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="{{ route('cv.index') }}">
+                            @if (session()->get('lang') == 'jp')
+                                履歴書を提出する
+                            @else
+                                Submit CV
+                            @endif
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="nav-link nav-menu" href="{{ route('employer.index') }}">
+                    @if (session()->get('lang') == 'jp')
+                        雇用者ゾーン
+                    @else
+                        Employer Zone
+                    @endif
+                </a>
+            </li>
+
+
+            <li>
+                <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    @if (session()->get('lang') == 'jp')
+                        資力
+                    @else
+                        Resources
+                    @endif
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{ route('gallery.index') }}" class="dropdown-item">
+                            @if (session()->get('lang') == 'jp')
+                                活動
+                            @else
+                                Activities
+                            @endif
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('blog.index') }}" class="dropdown-item">
+                            @if (session()->get('lang') == 'jp')
+                                ブログ
+                            @else
+                                Blog
+                            @endif
+                        </a>
+                    <li>
+                        <a href="{{ route('faq.index') }}" class="dropdown-item">
+                            @if (session()->get('lang') == 'jp')
+                                雇用主に関するFAQ
+                            @else
+                                Employer FAQ's
+                            @endif
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link nav-menu" href="{{ route('contact.index') }}">
+                    @if (session()->get('lang') == 'jp')
+                        コンタクト
+                    @else
+                        Contact
+                    @endif
+                </a>
+            </li>
+
+            <li>
+                <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-globe"></i>
+                    Link
+                </a>
+                <ul>
+                    <li>
+                        <a class="dropdown-item" href="https://fmcj.jp/" target="_blank">
+                            <i class="fa fa-globe"></i>
+                            FMCJ
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="https://jobgtop.com/" target="_blank">
+                            <i class="fa fa-globe"></i>
+                            JOBGTOP
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="nav-link nav-menu dropdown-toggle" href="#" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Language
                 </a>
                 <ul class="dropdown">
-                    <li><a href="adlistinggrid.html">Ad Grid</a></li>
-                    <li><a href="adlistinglist.html">Ad Listing</a></li>
-                    <li><a href="ads-details.html">Listing Detail</a></li>
+                    <li>
+                        <a href="{{ route('language.index') }}">
+                            <img src="{{ asset('data/us.gif') }}" alt=""
+                                style="width: 43px; height: auto; padding: 2px;">
+                        </a>
+
+                        <a href="{{ route('set_jp') }}">
+                            <img src="{{ asset('data/jp.jpeg') }}" alt=""
+                                style="width: 43px; height: auto; padding: 2px;">
+                        </a>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#">Pages</a>
-                <ul class="dropdown">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="ads-details.html">Ads Details</a></li>
-                    <li><a href="post-ads.html">Ads Post</a></li>
-                    <li><a href="pricing.html">Packages</a></li>
-                    <li><a href="testimonial.html">Testimonial</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="404.html">404</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Blog</a>
-                <ul class="dropdown">
-                    <li><a href="blog.html">Blog - Right Sidebar</a></li>
-                    <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                    <li><a href="blog-grid-full-width.html"> Blog full width </a></li>
-                    <li><a href="single-post.html">Blog Details</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="contact.html">Contact Us</a>
             </li>
         </ul>
 

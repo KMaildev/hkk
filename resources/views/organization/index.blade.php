@@ -34,7 +34,7 @@
                     </h1>
                     <div class="who-we-are-img">
                         <img src="{{ asset('data/org.png') }}" alt="Image"
-                            style="width: 100%; height: auto; background-size: center; object-fit: cover; border: 3px solid #f7bc33; padding: 10px;">
+                            style="width: 100%; height: auto; background-size: center; object-fit: cover;">
                     </div>
                 </div>
             </div>

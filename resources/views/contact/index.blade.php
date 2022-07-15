@@ -126,7 +126,8 @@
                                 <li>
                                     <span>Address : </span>
                                     <p>
-                                        9870 St Vincent Place, Glasgow, DC 45 Fr 45, Yangon, Myanmar
+                                        No.23, 2nd Flr, Botahtaung Avenue 2d Lane,
+                                        4th Qtr, Botahtaung Township, Yangon, Myanmar.
                                     </p>
                                 </li>
                                 <li>

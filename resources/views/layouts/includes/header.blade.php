@@ -23,6 +23,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/responsive.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="shortcut icon" href="{{ asset('data/logo.jpg') }}">
+
+    <meta content="" name="Htoo Kaung Kyaw Services Company">
+    <meta name="keywords" content="Htoo Kaung Kyaw Services Company" />
+    <meta property="og:title" content="Htoo Kaung Kyaw Services Company" />
+    <meta property="og:image" content="{{ asset('data/logo.jpg') }}" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Htoo Kaung Kyaw Services Company" />
 </head>
 <style>
     .nav-menu {

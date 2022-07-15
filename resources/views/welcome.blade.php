@@ -1,1063 +1,375 @@
 @extends('layouts.app')
 @section('title', 'Home')
 @section('content')
+
     <section id="categories">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12 col-xs-12">
+                <style>
+                    @media only screen and (max-width: 600px) {
+                        .padding {
+                            padding-top: 60px;
+                        }
+                    }
+                </style>
+                <div class="col-lg-10 col-md-12 col-xs-12 padding">
                     <div id="categories-icon-slider" class="categories-wrapper owl-carousel owl-theme">
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-1.png"
-                                                alt="">
+
+                        @foreach ($jobs as $job)
+                            <div class="item">
+                                <a href="{{ route('cv.index') }}">
+                                    <div class="category-icon-item">
+                                        <div class="icon-box">
+                                            <div class="icon">
+                                                <img src="{{ asset('data/job-search.png') }}" alt=""
+                                                    style="width: 50%;">
+                                            </div>
+                                            <h4>
+                                                {{ $job->title ?? '' }}
+                                            </h4>
                                         </div>
-                                        <h4>Bicycle</h4>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-2.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Furniture</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-3.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Laptop</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-4.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Electronic</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-5.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Toys</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-6.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Cloths</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-1.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Bicycle</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-2.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Furniture</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="category.html">
-                                <div class="category-icon-item">
-                                    <div class="icon-box">
-                                        <div class="icon">
-                                            <img src="https://preview.uideck.com/items/nexusplus/assets/img/category/img-3.png"
-                                                alt="">
-                                        </div>
-                                        <h4>Laptop</h4>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <section class="featured section-padding">
-        <div class="container">
-            <h1 class="section-title">Latest Products</h1>
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
-                        <figure>
-                            <div class="icon">
-                                <span class="bg-green"><i class="lni-heart"></i></span>
-                                <span><i class="lni-bookmark"></i></span>
-                            </div>
-                            <a href="#"><img class="img-fluid"
-                                    src="https://preview.uideck.com/items/nexusplus/assets/img/featured/img-1.jpg"
-                                    alt=""></a>
-                        </figure>
-                        <div class="feature-content">
-                            <div class="product">
-                                <a href="#">Electronic > </a>
-                                <a href="#">Cameras</a>
-                            </div>
-                            <h4><a href="ads-details.html">Canon SX Powershot ...</a></h4>
-                            <div class="meta-tag">
-                                <span>
-                                    <a href="#"><i class="lni-user"></i> John Smith</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-map-marker"></i> New York, US</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-tag"></i> Canon</a>
-                                </span>
-                            </div>
-                            <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry.</p>
-                            <div class="listing-bottom">
-                                <h3 class="price float-left">$249.00</h3>
-                                <a href="ads-details.html" class="btn btn-common float-right">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
-                        <figure>
-                            <span class="price-save">
-                                25% Save
-                            </span>
-                            <div class="icon">
-                                <span class="bg-green"><i class="lni-heart"></i></span>
-                                <span><i class="lni-bookmark"></i></span>
-                            </div>
-                            <a href="#"><img class="img-fluid"
-                                    src="https://preview.uideck.com/items/nexusplus/assets/img/featured/img-2.jpg"
-                                    alt=""></a>
-                        </figure>
-                        <div class="feature-content">
-                            <div class="product">
-                                <a href="#">Electronic > </a>
-                                <a href="#">Computers</a>
-                            </div>
-                            <h4><a href="ads-details.html">Apple Macbook Pro ...</a></h4>
-                            <div class="meta-tag">
-                                <span>
-                                    <a href="#"><i class="lni-user"></i> Sara Doe</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-map-marker"></i> California, US</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-tag"></i> Phones</a>
-                                </span>
-                            </div>
-                            <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry.</p>
-                            <div class="listing-bottom">
-                                <h3 class="price float-left">$289.00</h3>
-                                <a href="ads-details.html" class="btn btn-common float-right">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
-                        <figure>
-                            <div class="icon">
-                                <span class="bg-green"><i class="lni-heart"></i></span>
-                                <span><i class="lni-bookmark"></i></span>
-                            </div>
-                            <a href="#"><img class="img-fluid"
-                                    src="https://preview.uideck.com/items/nexusplus/assets/img/featured/img-3.jpg"
-                                    alt=""></a>
-                        </figure>
-                        <div class="feature-content">
-                            <div class="product">
-                                <a href="#">Vehicle > </a>
-                                <a href="#">Cars</a>
-                            </div>
-                            <h4><a href="ads-details.html">Mercedes Benz E200 ...</a></h4>
-                            <div class="meta-tag">
-                                <span>
-                                    <a href="#"><i class="lni-user"></i> Rossi Josh</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-map-marker"></i> Washington, US</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-tag"></i> Others</a>
-                                </span>
-                            </div>
-                            <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry.</p>
-                            <div class="listing-bottom">
-                                <h3 class="price float-left">$199.80</h3>
-                                <a href="ads-details.html" class="btn btn-common float-right">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
-                        <figure>
-                            <span class="price-save">
-                                10% Save
-                            </span>
-                            <div class="icon">
-                                <span class="bg-green"><i class="lni-heart"></i></span>
-                                <span><i class="lni-bookmark"></i></span>
-                            </div>
-                            <a href="#"><img class="img-fluid"
-                                    src="https://preview.uideck.com/items/nexusplus/assets/img/featured/img-4.jpg"
-                                    alt=""></a>
-                        </figure>
-                        <div class="feature-content">
-                            <div class="product">
-                                <a href="#">Others > </a>
-                                <a href="#">Bags</a>
-                            </div>
-                            <h4><a href="ads-details.html">Brown Leather Bag ...</a></h4>
-                            <div class="meta-tag">
-                                <span>
-                                    <a href="#"><i class="lni-user"></i> Maria Barlow</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-map-marker"></i> Chicago, US</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-tag"></i> Gucci</a>
-                                </span>
-                            </div>
-                            <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry.</p>
-                            <div class="listing-bottom">
-                                <h3 class="price float-left">$206.90</h3>
-                                <a href="ads-details.html" class="btn btn-common float-right">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
-                        <figure>
-                            <div class="icon">
-                                <span class="bg-green"><i class="lni-heart"></i></span>
-                                <span><i class="lni-bookmark"></i></span>
-                            </div>
-                            <a href="#"><img class="img-fluid"
-                                    src="https://preview.uideck.com/items/nexusplus/assets/img/featured/img-5.jpg"
-                                    alt=""></a>
-                        </figure>
-                        <div class="feature-content">
-                            <div class="product">
-                                <a href="#">Electronic > </a>
-                                <a href="#">Apple</a>
-                            </div>
-                            <h4><a href="ads-details.html">Iphonex 6 Plus Factor ...</a></h4>
-                            <div class="meta-tag">
-                                <span>
-                                    <a href="#"><i class="lni-user"></i> David Givens</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-map-marker"></i> New York, US</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-tag"></i> Apple</a>
-                                </span>
-                            </div>
-                            <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry.</p>
-                            <div class="listing-bottom">
-                                <h3 class="price float-left">$106.70</h3>
-                                <a href="ads-details.html" class="btn btn-common float-right">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-                    <div class="featured-box">
-                        <figure>
-                            <span class="price-save">
-                                35% Save
-                            </span>
-                            <div class="icon">
-                                <span class="bg-green"><i class="lni-heart"></i></span>
-                                <span><i class="lni-bookmark"></i></span>
-                            </div>
-                            <a href="#"><img class="img-fluid"
-                                    src="https://preview.uideck.com/items/nexusplus/assets/img/featured/img-6.jpg"
-                                    alt=""></a>
-                        </figure>
-                        <div class="feature-content">
-                            <div class="product">
-                                <a href="#">Furniture > </a>
-                                <a href="#">Home</a>
-                            </div>
-                            <h4><a href="ads-details.html">Wooden Dining Tabl ...</a></h4>
-                            <div class="meta-tag">
-                                <span>
-                                    <a href="#"><i class="lni-user"></i> John Smith</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-map-marker"></i> New York, US</a>
-                                </span>
-                                <span>
-                                    <a href="#"><i class="lni-tag"></i> Apple</a>
-                                </span>
-                            </div>
-                            <p class="dsc">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry.</p>
-                            <div class="listing-bottom">
-                                <h3 class="price float-left">$120.00</h3>
-                                <a href="ads-details.html" class="btn btn-common float-right">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="featured-lis section-padding">
+    <section id="about" class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 wow fadeIn" data-wow-delay="0.5s">
-                    <h3 class="section-title">Featured Products</h3>
-                    <div id="new-products" class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img class="img-fluid"
-                                        src="https://preview.uideck.com/items/nexusplus/assets/img/product/img1.jpg"
-                                        alt="">
-                                    <div class="overlay">
-                                        <div>
-                                            <a class="btn btn-common" href="ads-details.html">View Details</a>
-                                        </div>
-                                    </div>
-                                    <div class="btn-product bg-sale">
-                                        <a href="#">Sale</a>
-                                    </div>
-                                    <span class="price">$999.00</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">Macbook Pro 2020</a></h3>
-                                    <span>Electronic / Computers</span>
-                                    <div class="icon">
-                                        <span><i class="lni-bookmark"></i></span>
-                                        <span><i class="lni-heart"></i></span>
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="float-left">
-                                            <span class="icon-wrap">
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star"></i>
-                                            </span>
-                                            <span class="count-review">
-                                                (12 Review)
-                                            </span>
-                                        </div>
-                                        <div class="float-right">
-                                            <a class="address" href="#"><i class="lni-map-marker"></i> New
-                                                York</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img class="img-fluid"
-                                        src="https://preview.uideck.com/items/nexusplus/assets/img/product/img2.jpg"
-                                        alt="">
-                                    <div class="overlay">
-                                        <div>
-                                            <a class="btn btn-common" href="ads-details.html">View Details</a>
-                                        </div>
-                                    </div>
-                                    <span class="price">$269.00</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">Nikon Camera</a></h3>
-                                    <span>Electronic / Camera</span>
-                                    <div class="icon">
-                                        <span><i class="lni-bookmark"></i></span>
-                                        <span><i class="lni-heart"></i></span>
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="float-left">
-                                            <span class="icon-wrap">
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                            </span>
-                                            <span class="count-review">
-                                                (2 Review)
-                                            </span>
-                                        </div>
-                                        <div class="float-right">
-                                            <a class="address" href="#"><i class="lni-map-marker"></i>
-                                                California</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img class="img-fluid"
-                                        src="https://preview.uideck.com/items/nexusplus/assets/img/product/img3.jpg"
-                                        alt="">
-                                    <div class="overlay">
-                                        <div>
-                                            <a class="btn btn-common" href="ads-details.html">View Details</a>
-                                        </div>
-                                    </div>
-                                    <div class="btn-product bg-slod">
-                                        <a href="#">Sold</a>
-                                    </div>
-                                    <span class="price">$799.00</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">iPhone X Refurbished</a></h3>
-                                    <span>Electronic / Phones</span>
-                                    <div class="icon">
-                                        <span><i class="lni-bookmark"></i></span>
-                                        <span><i class="lni-heart"></i></span>
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="float-left">
-                                            <span class="icon-wrap">
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star"></i>
-                                            </span>
-                                            <span class="count-review">
-                                                (8 Review)
-                                            </span>
-                                        </div>
-                                        <div class="float-right">
-                                            <a class="address" href="#"><i class="lni-map-marker"></i> New
-                                                York</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img class="img-fluid"
-                                        src="https://preview.uideck.com/items/nexusplus/assets/img/product/img4.jpg"
-                                        alt="">
-                                    <div class="overlay">
-                                        <div>
-                                            <a class="btn btn-common" href="ads-details.html">View Details</a>
-                                        </div>
-                                    </div>
-                                    <span class="price">$99.00</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">Baby Toy</a></h3>
-                                    <span>Sports / Baby Toys</span>
-                                    <div class="icon">
-                                        <span><i class="lni-bookmark"></i></span>
-                                        <span><i class="lni-heart"></i></span>
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="float-left">
-                                            <span class="icon-wrap">
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star"></i>
-                                            </span>
-                                            <span class="count-review">
-                                                (12 Review)
-                                            </span>
-                                        </div>
-                                        <div class="float-right">
-                                            <a class="address" href="#"><i class="lni-map-marker"></i> New
-                                                York</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img class="img-fluid"
-                                        src="https://preview.uideck.com/items/nexusplus/assets/img/product/img5.jpg"
-                                        alt="">
-                                    <div class="overlay">
-                                        <div>
-                                            <a class="btn btn-common" href="ads-details.html">View Details</a>
-                                        </div>
-                                    </div>
-                                    <span class="price">$99.00</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">Baby Toy</a></h3>
-                                    <span>Sports / Baby Toys</span>
-                                    <div class="icon">
-                                        <span><i class="lni-bookmark"></i></span>
-                                        <span><i class="lni-heart"></i></span>
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="float-left">
-                                            <span class="icon-wrap">
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star"></i>
-                                            </span>
-                                            <span class="count-review">
-                                                (12 Review)
-                                            </span>
-                                        </div>
-                                        <div class="float-right">
-                                            <a class="address" href="#"><i class="lni-map-marker"></i> New
-                                                York</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="carousel-thumb">
-                                    <img class="img-fluid"
-                                        src="https://preview.uideck.com/items/nexusplus/assets/img/product/img6.jpg"
-                                        alt="">
-                                    <div class="overlay">
-                                        <div>
-                                            <a class="btn btn-common" href="ads-details.html">View Details</a>
-                                        </div>
-                                    </div>
-                                    <div class="btn-product bg-sale">
-                                        <a href="#">Sale</a>
-                                    </div>
-                                    <span class="price">$99.00</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="ads-details.html">Baby Toy</a></h3>
-                                    <span>Sports / Baby Toys</span>
-                                    <div class="icon">
-                                        <span><i class="lni-bookmark"></i></span>
-                                        <span><i class="lni-heart"></i></span>
-                                    </div>
-                                    <div class="card-text">
-                                        <div class="float-left">
-                                            <span class="icon-wrap">
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star-filled"></i>
-                                                <i class="lni-star"></i>
-                                            </span>
-                                            <span class="count-review">
-                                                (12 Review)
-                                            </span>
-                                        </div>
-                                        <div class="float-right">
-                                            <a class="address" href="#"><i class="lni-map-marker"></i> New
-                                                York</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-md-8 col-lg-8 col-xs-12">
+                    <div class="about-wrapper">
+                        <h2 style="color: #E93F33; text-shadow: 5px 5px 5px gray; font-weight: bold;">
+                            Htoo Kaung Kyaw Services Company
+                        </h2>
+                        <span style="font-size: 17px; color: black; text-shadow: 1px 1px 1px gray; font-weight: bold;">
+                            Overseas Employment Agency
+                        </span>
+                        <p class="intro-desc py-3" style="text-align: justify">
+                            We at Htoo Kaung Kyaw Services Co.,Ltd takes pride in introducing ourselves as one of the
+                            leading 300+ licensed overseas recruiting companies in Myanmar with MOEAF certification &
+                            catering to all categories of work force requirement with precision.
+                            <br><br>
+                            Since our inception in 2000, we have established and grown in this industry by providing right
+                            to workforce to our clients with excellent and quality service successfully.
+                            We also provide consultancy on:
+                        </p>
+                        <div class="post-btn">
+                            <a class="btn btn-common" href="{{ route('about.index') }}">
+                                <i class="fa fa-arrow-right"></i>
+                                Know More
+                            </a>
+
+                            <a class="btn btn-common" href="{{ route('contact.index') }}">
+                                <i class="fa fa-arrow-right"></i>
+                                Contact Us
+                            </a>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xs-12">
+                    <img class="img-fluid" src="{{ asset('data/about.JPG') }}" alt=""
+                        style="box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; border: 1px solid #f6bb33; padding: 5px;">
                 </div>
             </div>
         </div>
     </section>
 
 
-    <section class="works section-padding">
+    <section class="blog-area pb-100 py-3" style="background-color: #e2e0dc;">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="section-title">How It Works?</h3>
-                </div>
-                <div class="col-lg-4 col-md-4 col-xs-12">
-                    <div class="works-item">
-                        <div class="icon-box">
-                            <i class="lni-users"></i>
+            <br>
+            <h4 style="text-align: center; color: #E93F33; text-shadow: 3px 3px 3px gray; font-weight: bold;">
+                Our Culture
+            </h4>
+            <p style="text-align: justify; color: #000000; font-weight: 400;">
+                At Htoo Kaung Kyaw Services Company, we abide by the concept of human development for organizational
+                development in order to achieve our ultimate goal of delivering the best value to our customers and
+                business partners in line with the following principles.
+            </p>
+
+            <div class="row py-5">
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p style="text-align: center;">
+                                <img loading="lazy" class="alignnone wp-image-21123" src="{{ asset('data/icon/3.png') }}"
+                                    alt="" width="75" height="56" sizes="(max-width: 75px) 100vw, 75px">
+                            </p>
+                            <br>
+                            <h2 style="font-size: 1em; line-height: 1em; text-align: center;">
+                                <span style="color: #E93F33;">Collaborative</span>
+                            </h2>
+                            <p>
+                                <span style="color: #000000; font-weight: 400;">To cooperate and support each other by
+                                    sharing ideas and
+                                    listening. In order to create and expand success.
+                                </span>
+                            </p>
                         </div>
-                        <p>Create an Account</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-xs-12">
-                    <div class="works-item">
-                        <div class="icon-box">
-                            <i class="lni-bookmark-alt"></i>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p style="text-align: center;">
+                                <img class="alignnone wp-image-21120" src="{{ asset('data/icon/1.png') }}" alt=""
+                                    width="75" height="56" sizes="(max-width: 75px) 100vw, 75px">
+                            </p>
+                            <br>
+                            <h2 style="font-size: 1em; line-height: 1em; text-align: center;">
+                                <span style="color: #E93F33;">Can-Do Attitude</span>
+                            </h2>
+                            <p style="text-align: left;">
+                                <span style="color: #000000; text-align: center;">
+                                    Using a positive and “Can-Do”
+                                    attitude to seize the moment and realize the opportunity. Think of obstacles as
+                                    challenges then strive for success.
+                                </span>
+                            </p>
                         </div>
-                        <p>Post Free Ad</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-xs-12">
-                    <div class="works-item">
-                        <div class="icon-box">
-                            <i class="lni-thumbs-up"></i>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p style="text-align: center;">
+                                <img loading="lazy" class="alignnone wp-image-21124" src="{{ asset('data/icon/2.png') }}"
+                                    alt="" width="75" height="56" sizes="(max-width: 75px) 100vw, 75px">
+                            </p>
+                            <br>
+                            <h2 style="font-size: 1em; line-height: 1em; text-align: center;">
+                                <span style="color: #E93F33;">Accountability</span>
+                            </h2>
+                            <p>
+                                <span style="color: #000000;">Have responsibility and good conscience with awareness of the
+                                    organization’s overall results with honesty and ethical standards.
+                                </span>
+                            </p>
+
                         </div>
-                        <p>Deal Done</p>
                     </div>
                 </div>
-                <hr class="works-line">
+
+                <div class="col-lg-4 col-md-6 py-5">
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p style="text-align: center;">
+                                <img loading="lazy" class="alignnone wp-image-21123" src="{{ asset('data/icon/5.png') }}"
+                                    alt="" width="75" height="56" sizes="(max-width: 75px) 100vw, 75px">
+                            </p>
+                            <br>
+                            <h2 style="font-size: 1em; line-height: 1em; text-align: center;">
+                                <span style="color: #E93F33;">
+                                    Learning and Development
+                                </span>
+                            </h2>
+                            <p>
+                                <span style="font-weight: 400; color: #000000;">
+                                    Open mind to learn new things. Continuous self improvement with modern knowledge and
+                                    skill set.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 py-5">
+                    <div class="wpb_text_column wpb_content_element ">
+                        <div class="wpb_wrapper">
+                            <p style="text-align: center;">
+                                <img loading="lazy" class="alignnone wp-image-21123"
+                                    src="{{ asset('data/icon/4.png') }}" alt="" width="75" height="56"
+                                    sizes="(max-width: 75px) 100vw, 75px">
+                            </p>
+                            <br>
+                            <h2 style="font-size: 1em; line-height: 1em; text-align: center;">
+                                <span style="color: #E93F33;">
+                                    Customer Centric
+                                </span>
+                            </h2>
+                            <p>
+                                <span style="font-weight: 400; color: #000000;">
+                                    Being service minded. Emphasizing and adhering to the customer’s success is the first
+                                    priority.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
 
     <section class="services bg-light section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="section-title">Key Features</h3>
+                    <h3 class="section-title"
+                        style="text-align: center; color: #E93F33; text-shadow: 5px 5px 5px gray; font-weight: bold;">
+                        Our Value Partners
+                    </h3>
                 </div>
-
-                <div class="col-md-6 col-lg-4 col-xs-12">
-                    <div class="services-item wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="icon">
-                            <i class="lni-leaf"></i>
-                        </div>
-                        <div class="services-content">
-                            <h3><a href="#">Elegant Design</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis.</p>
+                @foreach ($partners as $partner)
+                    <div class="col-md-6 col-lg-4 col-xs-12">
+                        <div class="services-item wow fadeInRight" data-wow-delay="0.2s">
+                            <div class="icon">
+                                <i class="fa fa-flag"></i>
+                            </div>
+                            <div class="services-content">
+                                <h3>
+                                    <a href="#">
+                                        {{ $partner->company_name ?? '' }}
+                                    </a>
+                                </h3>
+                                <p>
+                                    {{ $partner->city ?? '' }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 col-xs-12">
-                    <div class="services-item wow fadeInRight" data-wow-delay="0.4s">
-                        <div class="icon">
-                            <i class="lni-display"></i>
-                        </div>
-                        <div class="services-content">
-                            <h3><a href="#">Responsive Design</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 col-xs-12">
-                    <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
-                        <div class="icon">
-                            <i class="lni-color-pallet"></i>
-                        </div>
-                        <div class="services-content">
-                            <h3><a href="#">Clean UI</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 col-xs-12">
-                    <div class="services-item wow fadeInRight" data-wow-delay="0.8s">
-                        <div class="icon">
-                            <i class="lni-emoji-smile"></i>
-                        </div>
-                        <div class="services-content">
-                            <h3><a href="#">UX Friendly</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 col-xs-12">
-                    <div class="services-item wow fadeInRight" data-wow-delay="1s">
-                        <div class="icon">
-                            <i class="lni-pencil-alt"></i>
-                        </div>
-                        <div class="services-content">
-                            <h3><a href="#">Easily Customizable</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 col-xs-12">
-                    <div class="services-item wow fadeInRight" data-wow-delay="1.2s">
-                        <div class="icon">
-                            <i class="lni-headphone-alt"></i>
-                        </div>
-                        <div class="services-content">
-                            <h3><a href="#">Security Support</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aut magni perferendis.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-
-    <section id="pricing-table" class="section-padding">
+    <section class="counter-section section-padding"
+        style="background-image: url({{ asset('data/counter_bg.jpeg') }})">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title">Pricing Plan</h2>
-                </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
-                    <div class="table">
-                        <div class="icon">
-                            <i class="lni-gift"></i>
-                        </div>
-                        <div class="pricing-header">
-                            <p class="price-value">$29</p>
-                        </div>
-                        <div class="title">
-                            <h3>Basic</h3>
-                        </div>
-                        <ul class="description">
-                            <li>Free ad posting</li>
-                            <li>No Featured ads availability</li>
-                            <li>Access to limited features</li>
-                            <li>For 30 days</li>
-                            <li>100% Secure!</li>
-                        </ul>
-                        <button class="btn btn-common">Purchase</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
-                    <div class="table" id="active-tb">
-                        <div class="icon">
-                            <i class="lni-leaf"></i>
-                        </div>
-                        <div class="pricing-header">
-                            <p class="price-value">$49</p>
-                        </div>
-                        <div class="title">
-                            <h3>Standard</h3>
-                        </div>
-                        <ul class="description">
-                            <li>Free ad posting</li>
-                            <li>10 Featured ads availability</li>
-                            <li>Access to unlimited features</li>
-                            <li>For 30 days</li>
-                            <li>100% Secure!</li>
-                        </ul>
-                        <button class="btn btn-common">Purchase</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-xs-12">
-                    <div class="table">
+
+                <div class="col-md-3 col-sm-6 work-counter-widget">
+                    <div class="counter">
                         <div class="icon">
                             <i class="lni-layers"></i>
                         </div>
-                        <div class="pricing-header">
-                            <p class="price-value">$69</p>
+                        <h2 class="counterUp">20</h2>
+                        <p>
+                            Our Experience
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 work-counter-widget">
+                    <div class="counter">
+                        <div class="icon">
+                            <i class="lni-users"></i>
                         </div>
-                        <div class="title">
-                            <h3>Premium</h3>
-                        </div>
-                        <ul class="description">
-                            <li>Free ad posting</li>
-                            <li>100 Featured ads availability</li>
-                            <li>Access to unlimited features</li>
-                            <li>For 30 days</li>
-                            <li>100% Secure!</li>
-                        </ul>
-                        <button class="btn btn-common">Purchase</button>
+                        <h2 class="counterUp">
+                            120000
+                        </h2>
+                        <p>
+                            Students
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 work-counter-widget">
+                    <div class="counter">
+                        <div class="icon"><i class="lni-briefcase"></i></div>
+                        <h2 class="counterUp">
+                            9300
+                        </h2>
+                        <p>
+                            Sending Workers
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 work-counter-widget">
+                    <div class="counter">
+                        <div class="icon"><i class="lni-briefcase"></i></div>
+                        <h2 class="counterUp">
+                            75
+                        </h2>
+                        <p>
+                            Jobs Available
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <section class="testimonial section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="testimonials" class="owl-carousel">
-                        <div class="item">
-                            <div class="img-thumb">
-                                <img src="https://preview.uideck.com/items/nexusplus/assets/img/testimonial/img1.png"
-                                    alt="">
-                            </div>
-                            <div class="testimonial-item">
-                                <div class="content">
-                                    <p class="description">Eiusmod tempor incidiunt labore velit dolore magna aliqu sed
-                                        eniminim veniam quis nostrud exercition eullamco laborisaa, Eiusmod tempor
-                                        incidiunt labore velit dolore magna.</p>
-                                    <div class="info-text">
-                                        <h2><a href="#">Josh Rossi</a></h2>
-                                        <h4><a href="#">CEO of Fiverr</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item">
-                                <div class="img-thumb">
-                                    <img src="https://preview.uideck.com/items/nexusplus/assets/img/testimonial/img2.png"
-                                        alt="">
-                                </div>
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p class="description">Eiusmod tempor incidiunt labore velit dolore magna aliqu
-                                            sed eniminim veniam quis nostrud exercition eullamco laborisaa, Eiusmod
-                                            tempor incidiunt labore velit dolore magna.</p>
-                                        <div class="info-text">
-                                            <h2><a href="#">Jessica</a></h2>
-                                            <h4><a href="#">CEO of Dropbox</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item">
-                                <div class="img-thumb">
-                                    <img src="https://preview.uideck.com/items/nexusplus/assets/img/testimonial/img3.png"
-                                        alt="">
-                                </div>
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p class="description">Eiusmod tempor incidiunt labore velit dolore magna aliqu
-                                            sed eniminim veniam quis nostrud exercition eullamco laborisaa, Eiusmod
-                                            tempor incidiunt labore velit dolore magna.</p>
-                                        <div class="info-text">
-                                            <h2><a href="#">Johnny Zeigler</a></h2>
-                                            <h4><a href="#">CEO of Fiverr</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item">
-                                <div class="img-thumb">
-                                    <img src="https://preview.uideck.com/items/nexusplus/assets/img/testimonial/img4.png"
-                                        alt="">
-                                </div>
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p class="description">Eiusmod tempor incidiunt labore velit dolore magna aliqu
-                                            sed eniminim veniam quis nostrud exercition eullamco laborisaa, Eiusmod
-                                            tempor incidiunt labore velit dolore magna.</p>
-                                        <div class="info-text">
-                                            <h2><a href="#">Josh Rossi</a></h2>
-                                            <h4><a href="#">CEO of Fiverr</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item">
-                                <div class="img-thumb">
-                                    <img src="https://preview.uideck.com/items/nexusplus/assets/img/testimonial/img5.png"
-                                        alt="">
-                                </div>
-                                <div class="testimonial-item">
-                                    <div class="content">
-                                        <p class="description">Eiusmod tempor incidiunt labore velit dolore magna aliqu
-                                            sed eniminim veniam quis nostrud exercition eullamco laborisaa, Eiusmod
-                                            tempor incidiunt labore velit dolore magna.</p>
-                                        <div class="info-text">
-                                            <h2><a href="#">Priyanka</a></h2>
-                                            <h4><a href="#">CEO of Dropbox</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <section id="blog" class="section-padding">
+        <div class="container">
+            <h2 class="section-title"
+                style="text-align: center; color: #E93F33; text-shadow: 5px 5px 5px gray; font-weight: bold;">
+                Activities
+            </h2>
+            <div class="row">
+                @foreach ($activities as $activitie)
+                    <div class="col-md-12 py-3">
+                        <div class="heading-line-bottom">
+                            <h6 style="color: black !important; font-size: 20px;">
+                                {{ $activitie->title }}
+                            </h6>
+                            <p>
+                                {{ $activitie->description }}
+                            </p>
+                        </div>
+                        <hr>
+                    </div>
+                    @php
+                        $values = explode(',', $activitie->photo);
+                    @endphp
+                    @foreach ($values as $photo)
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="single-blog-post">
+                                <div class="blog-img">
+                                    <img data-enlargeable="" src="{{ $photo }}" alt="Image"
+                                        style="width: 100%; height: 260px; background-size: center; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endforeach
+            </div>
+        </div>
+    </section>
 
+
+    <section id="blog" class="section-padding" style="background-color: #f2eded">
         <div class="container">
             <h2 class="section-title">
                 Blog Post
             </h2>
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-
-                    <div class="blog-item-wrapper">
-                        <div class="blog-item-img">
-                            <a href="single-post.html">
-                                <img src="https://preview.uideck.com/items/nexusplus/assets/img/blog/img-1.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div class="blog-item-text">
-                            <div class="meta-tags">
-                                <span class="user float-left"><a href="#"><i class="lni-user"></i> Posted By
-                                        Admin</a></span>
-                                <span class="date float-right"><i class="lni-calendar"></i> 24 May, 2018</span>
+                @foreach ($blogs as $new)
+                    <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
+                        <div class="blog-item-wrapper">
+                            <div class="blog-item-img">
+                                <a href="single-post.html">
+                                    <img src="{{ $new->photo }}" alt="" class="img-responsive img-fullwidth"
+                                        style="width: 100%; height: 150px; background-size: center; object-fit: cover;">
+                                </a>
                             </div>
-                            <h3>
-                                <a href="single-post.html">Recently Launching Our Iphone X</a>
-                            </h3>
-                            <p>
-                                Reprehenderit nemo quod tempore doloribus ratione distinctio quis quidem vitae sunt
-                                reiciendis, molestias omnis soluta.
-                            </p>
-                            <a href="single-post.html" class="btn btn-common">Read More</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-
-                    <div class="blog-item-wrapper">
-                        <div class="blog-item-img">
-                            <a href="single-post.html">
-                                <img src="https://preview.uideck.com/items/nexusplus/assets/img/blog/img-2.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div class="blog-item-text">
-                            <div class="meta-tags">
-                                <span class="user float-left"><a href="#"><i class="lni-user"></i> Posted By
-                                        Admin</a></span>
-                                <span class="date float-right"><i class="lni-calendar"></i> 24 May, 2018</span>
+                            <div class="blog-item-text">
+                                <h3>
+                                    <a href="single-post.html">
+                                        {{ $new->title_eng ?? '' }}
+                                    </a>
+                                </h3>
+                                <p>
+                                    {{ Str::limit($new->description_eng, 120) }}
+                                </p>
+                                <a href="{{ route('blog.show', $new->id) }}" class="btn btn-common">Read More</a>
                             </div>
-                            <h3>
-                                <a href="single-post.html">How to get more ad views</a>
-                            </h3>
-                            <p>
-                                Reprehenderit nemo quod tempore doloribus ratione distinctio quis quidem vitae sunt
-                                reiciendis, molestias omnis soluta.
-                            </p>
-                            <a href="single-post.html" class="btn btn-common">Read More</a>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-
-                    <div class="blog-item-wrapper">
-                        <div class="blog-item-img">
-                            <a href="single-post.html">
-                                <img src="https://preview.uideck.com/items/nexusplus/assets/img/blog/img-3.jpg"
-                                    alt="">
-                            </a>
-                        </div>
-                        <div class="blog-item-text">
-                            <div class="meta-tags">
-                                <span class="user float-left"><a href="#"><i class="lni-user"></i> Posted By
-                                        Admin</a></span>
-                                <span class="date float-right"><i class="lni-calendar"></i> 24 May, 2018</span>
-                            </div>
-                            <h3>
-                                <a href="single-post.html">Writing a better product description</a>
-                            </h3>
-                            <p>
-                                Reprehenderit nemo quod tempore doloribus ratione distinctio quis quidem vitae sunt
-                                reiciendis, molestias omnis soluta.
-                            </p>
-                            <a href="single-post.html" class="btn btn-common">Read More</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="subscribes section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="subscribes-inner">
-                        <div class="icon">
-                            <i class="lni-pointer"></i>
-                        </div>
-                        <div class="sub-text">
-                            <h3>Subscribe to Newsletter</h3>
-                            <p>and receive new ads in inbox</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <form>
-                        <div class="subscribe">
-                            <input class="form-control" name="EMAIL" placeholder="Enter your Email" required=""
-                                type="email">
-                            <button class="btn btn-common" type="submit">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
